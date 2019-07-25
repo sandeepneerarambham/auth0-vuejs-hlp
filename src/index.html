@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth0 Hosted Login</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #0747A6; 
+            color: #FFFFFF;
+        }
+        a { cursor: pointer; }
+        label {
+            color: black;
+        }
+        .auth0-form {
+            background: #ffffff;
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+            height: 100%;
+        }
+        .header {
+            text-align: center;
+            margin: 100px 10px 0 0;
+        }
+        .white-text-center {
+            text-align: center;
+            color: white;
+        }
+        .center {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+        }
+        .auth0-color {
+            color: white
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div class="text-center">
+        <div id="inner">Protected by <strong><a class="auth0-color" href="https://auth0.com" target="_blank">Auth0</a></strong></div>
+    </div>
+    <script src="YOUR_CDN_URL"></script>
+    <script>
+        try {
+            window.auth0Config  = JSON.parse(decodeURIComponent(escape(window.atob('@@config@@'))));
+        } catch (e) {
+            window.auth0Config = {
+                    auth0Domain: 'YOUR_AUTHO_DOMAIN',
+                    clientID: 'YOUR_CLIENT_ID',
+                    callbackURL: location.href,
+                    audience: 'https://YOUR_AUTHO_DOMAIN/userinfo',
+                    scope: 'openid',
+                    authorizationServer: {
+                        url: '',
+                        issuer: '',
+                    },
+                    extraParams: {
+                        response_type: 'token id_token'
+                    },
+                };            
+        }
+    </script>
+</body>
+</html>
