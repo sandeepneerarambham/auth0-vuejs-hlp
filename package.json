@@ -11,7 +11,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "auth0-js": "^9.8.1",
+    "auth0-js": "^9.13.2",
     "vee-validate": "^2.1.0-beta.6",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
